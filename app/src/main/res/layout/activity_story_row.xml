@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout android:id="@+id/storyRow"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".StoryRowActivity"
     android:orientation="horizontal">
 
     <TextView
@@ -21,10 +19,11 @@
         android:layout_weight="1"
         android:text="@string/story_description" />
 
-    <Button
-        android:id="@+id/readStoryButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="@string/start_story_button" />
+    <!--<Button-->
+        <!--android:id="@+id/readStoryButton"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_weight="1"-->
+        <!--android:text="@string/start_story_button"-->
+        <!--android:focusable="false"/>-->
 </LinearLayout>

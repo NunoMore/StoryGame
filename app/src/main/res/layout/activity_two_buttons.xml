@@ -7,7 +7,7 @@
     tools:context=".TwoButtonsActivity">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/buttonsStoryTextView"
         android:layout_width="329dp"
         android:layout_height="259dp"
         android:layout_marginStart="8dp"
@@ -21,7 +21,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/buttonsStoryButton1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -31,13 +31,13 @@
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
         android:text="Button"
-        app:layout_constraintBottom_toTopOf="@+id/button2"
+        app:layout_constraintBottom_toTopOf="@+id/buttonsStoryButton2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/buttonsStoryTextView" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/buttonsStoryButton2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"

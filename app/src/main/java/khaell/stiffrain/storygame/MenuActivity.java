@@ -1,14 +1,19 @@
 package khaell.stiffrain.storygame;
 
+import android.content.Intent;
+import android.os.Parcelable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.ArrayList;
 
 public class MenuActivity extends AppCompatActivity {
 
@@ -28,7 +33,7 @@ public class MenuActivity extends AppCompatActivity {
         mStoryListView = findViewById(R.id.storyListView);
 
 
-        // todo: insert random button
+        // todo: insert random button function
 
     }
 
@@ -38,6 +43,16 @@ public class MenuActivity extends AppCompatActivity {
 
         mAdapter = new StoryListAdapter(this, mDatabaseReference);
         mStoryListView.setAdapter(mAdapter);
+
+        mStoryListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                Story story = mAdapter.getItem(position);
+                startActivity(new Intent(MenuActivity.this, TwoButtonsActivity.class).putExtra("story", story));
+
+            }
+        });
 
     }
 
