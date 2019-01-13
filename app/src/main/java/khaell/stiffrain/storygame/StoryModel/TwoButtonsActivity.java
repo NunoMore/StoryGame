@@ -1,12 +1,13 @@
-package khaell.stiffrain.storygame;
+package khaell.stiffrain.storygame.StoryModel;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.TextView;
 
-import java.util.ArrayList;
 import java.util.Map;
+
+import khaell.stiffrain.storygame.R;
 
 public class TwoButtonsActivity extends AppCompatActivity {
 
@@ -15,7 +16,6 @@ public class TwoButtonsActivity extends AppCompatActivity {
     private TextView mTextView;
 
     private Story mStory;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,10 +29,11 @@ public class TwoButtonsActivity extends AppCompatActivity {
         mStory = getIntent().getParcelableExtra("story");
 
         Map<String, Object> pages = mStory.getPages();
-        Map<String, Object> initialPage = (Map<String, Object>) pages.get("page1");
+        Page initialPage = (Page) pages.get("page1");
 
-        mTextView.setText(initialPage.get("text").toString());
-
+        mTextView.setText(initialPage.getText());
+        mButtonTop.setText(initialPage.getActions().get("button1").get("text").toString());
+        mButtonBottom.setText(initialPage.getActions().get("button2").get("text").toString());
 
         // todo: assign button 1 stuff
 

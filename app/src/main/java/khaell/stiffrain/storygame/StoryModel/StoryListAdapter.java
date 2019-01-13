@@ -1,4 +1,4 @@
-package khaell.stiffrain.storygame;
+package khaell.stiffrain.storygame.StoryModel;
 
 import android.app.Activity;
 import android.content.Context;
@@ -17,6 +17,8 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 
 import java.util.ArrayList;
+
+import khaell.stiffrain.storygame.R;
 
 public class StoryListAdapter extends BaseAdapter {
 

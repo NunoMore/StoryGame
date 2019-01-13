@@ -1,4 +1,4 @@
-package khaell.stiffrain.storygame;
+package khaell.stiffrain.storygame.StoryModel;
 
 public enum StoryType {
 

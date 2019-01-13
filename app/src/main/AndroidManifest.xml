@@ -17,8 +17,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".DiceActivity" />
-        <activity android:name=".TwoButtonsActivity" />
+        <activity android:name=".StoryModel.DiceActivity" />
+        <activity android:name=".StoryModel.TwoButtonsActivity" />
     </application>
 
 </manifest>

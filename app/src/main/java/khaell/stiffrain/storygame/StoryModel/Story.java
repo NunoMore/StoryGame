@@ -1,17 +1,17 @@
-package khaell.stiffrain.storygame;
+package khaell.stiffrain.storygame.StoryModel;
 
 import android.os.Parcel;
 import android.os.Parcelable;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 
-class Story implements Parcelable {
+public class Story implements Parcelable {
 
-     private String title;
-     private String description;
-     private Map<String, Object> pages;
-
+    private String title;
+    private String description;
+    private Map<String, Object> pages;
 
     public Story(String title, String description, Map<String, Object> pages) {
         this.title = title;
@@ -19,10 +19,9 @@ class Story implements Parcelable {
         this.pages = pages;
     }
 
-
     public Story(){
 
-     }
+    }
 
     public static final Creator<Story> CREATOR = new Creator<Story>() {
         @Override
@@ -39,9 +38,18 @@ class Story implements Parcelable {
     public Story(Parcel in) {
         title = in.readString();
         description = in.readString();
-        pages = new HashMap<String, Object>();
+        HashMap<String, HashMap<String, HashMap<String, Map<String, Object>>>> parcelPages = new HashMap<>();
 
-        in.readMap(pages, Map.class.getClassLoader());
+        in.readMap(parcelPages, Map.class.getClassLoader());
+
+        int i = 0;
+        for ( HashMap<String, HashMap<String, Map<String, Object>>> page : parcelPages.values() ) {
+
+            pages.put("page"+i, new Page(
+                    page.get("text").toString(),
+                    page.get("type").toString(),
+                    page.get("actions")));
+        }
     }
 
     @Override
@@ -54,34 +62,6 @@ class Story implements Parcelable {
         dest.writeString(title);
         dest.writeString(description);
         dest.writeMap(pages);
-    }
-
-    public class Page{
-         private String text;
-         private String type;
-         private Map<String, Object> consequences;
-
-         public Page(String text, String type, Map<String, Object> consequences) {
-             this.text = text;
-             this.type = type;
-             this.consequences = consequences;
-         }
-
-         public Page() {
-
-         }
-
-         public String getText() {
-             return text;
-         }
-
-         public String getType() {
-             return type;
-         }
-
-         public  Map<String, Object> getConsequences() {
-             return consequences;
-         }
     }
 
     public String getTitle() {

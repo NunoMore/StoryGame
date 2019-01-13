@@ -1,19 +1,19 @@
 package khaell.stiffrain.storygame;
 
 import android.content.Intent;
-import android.os.Parcelable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
-import android.widget.TextView;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-import java.util.ArrayList;
+import khaell.stiffrain.storygame.StoryModel.Story;
+import khaell.stiffrain.storygame.StoryModel.StoryListAdapter;
+import khaell.stiffrain.storygame.StoryModel.TwoButtonsActivity;
 
 public class MenuActivity extends AppCompatActivity {
 
@@ -34,6 +34,7 @@ public class MenuActivity extends AppCompatActivity {
 
 
         // todo: insert random button function
+        // adapter.getCount !!
 
     }
 
@@ -53,7 +54,5 @@ public class MenuActivity extends AppCompatActivity {
 
             }
         });
-
     }
-
 }
