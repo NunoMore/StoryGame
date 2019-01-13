@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "59197841595",
+    "firebase_url": "https://storygame-405d1.firebaseio.com",
+    "project_id": "storygame-405d1",
+    "storage_bucket": "storygame-405d1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:59197841595:android:8bda6059bd75ef3a",
+        "android_client_info": {
+          "package_name": "khaell.stiffrain.storygame"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "59197841595-gniqe1ou7oenmrg9otlpencvpq4bs71j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDHfy-ZwImqjta-UsxTM4EXrz3Yd3ieLxc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

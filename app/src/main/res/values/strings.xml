@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Story Game</string>
+    <string name="welcome_message">Welcome !!</string>
+    <string name="menu_title">Stories:</string>
+    <string name="random_button_text">Random</string>
+    <string name="start_app_button">Start!</string>
+    <string name="story_title">Story Title</string>
+    <string name="story_description">Story Description</string>
+    <string name="start_story_button">Read</string>
+    <string name="roll_button_text">Roll</string>
+</resources>
