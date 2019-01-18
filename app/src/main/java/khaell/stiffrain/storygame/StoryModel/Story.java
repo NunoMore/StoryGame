@@ -1,6 +1,7 @@
 package khaell.stiffrain.storygame.StoryModel;
 
 import android.os.Parcel;
+import android.os.ParcelFileDescriptor;
 import android.os.Parcelable;
 
 import java.util.HashMap;
@@ -38,17 +39,26 @@ public class Story implements Parcelable {
     public Story(Parcel in) {
         title = in.readString();
         description = in.readString();
-        HashMap<String, HashMap<String, HashMap<String, Map<String, Object>>>> parcelPages = new HashMap<>();
+        pages = new HashMap<>();
+        //HashMap<String, HashMap<String, HashMap<String, Map<String, Object>>>> parcelPages = new HashMap<>();
+        HashMap<String, HashMap<String,Object>> parcelPages = new HashMap<>();
 
+        String pageText;
+        String pageType;
+        Map<String, Map<String, Object>> pageActions;
+
+        //in.readMap(parcelPages, Map.class.getClassLoader());
         in.readMap(parcelPages, Map.class.getClassLoader());
 
-        int i = 0;
-        for ( HashMap<String, HashMap<String, Map<String, Object>>> page : parcelPages.values() ) {
+        int i = parcelPages.size();
+        for ( HashMap<String, Object> page : parcelPages.values() ) {
 
-            pages.put("page"+i, new Page(
-                    page.get("text").toString(),
-                    page.get("type").toString(),
-                    page.get("actions")));
+            pageText = page.get("text").toString();
+            pageType = page.get("type").toString();
+            pageActions = (Map<String, Map<String, Object>>) page.get("actions");
+
+            pages.put("page" +i, new Page(pageText, pageType, pageActions));
+            i=i-1;
         }
     }
 

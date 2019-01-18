@@ -18,7 +18,19 @@ public class Page {
 
      }
 
-     public String getText() {
+    public void setText(String text) {
+        this.text = text;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public void setActions(Map<String, Map<String, Object>> actions) {
+        this.actions = actions;
+    }
+
+    public String getText() {
          return text;
      }
 
